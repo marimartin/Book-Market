@@ -1,0 +1,28 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project-1</title>
+</head>
+<body>
+    <h1>Project One of Semester one</h1>
+    <!-- <p>apikey": "OKRMlubl0Ov2Nrhzst6KTSrRWoondxNLT87VIvUnr1-U"</p> -->
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script>
+        //alert('hello world');
+        var textt = "I am apset today";
+        var num = 1;
+        function x() {
+            $.ajax({
+                url:  "https://api.us-east.tone-analyzer.watson.cloud.ibm.comv?text="+textt+"OKRMlubl0Ov2Nrhzst6KTSrRWoondxNLT87VIvUnr1-U",
+                method: "GET",
+            }).then(function(response) {
+                console.log(response);
+            });
+        }
+    </script>
+    
+</body>
+</html>

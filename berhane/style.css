@@ -1,0 +1,52 @@
+.container{
+    margin: 0 auto;
+    border-radius: 25px;
+    background-color: #e0e0e0;
+    max-width: 700px;
+    justify-content: center;
+    color: black;
+}
+.title {
+    border-top-right-radius: 25px;
+    border-top-left-radius: 25px;
+    font-style: italic;
+    color: black;
+    font-weight: 800;
+    background-color:#e0e0e0;
+}
+.description {
+    margin: auto 20%;
+}
+h6 {
+    text-align: start;
+    margin-left: 5%;
+}
+.row {
+    text-align: center;
+}
+.input-field{
+    margin: 20px;
+    padding-bottom: 20px;
+}
+.row2 {
+    margin-left: auto 20%;
+    padding: 20px;
+}
+.textareadiv {
+    padding-bottom: 10px;
+}
+.selectdiv{
+    margin-top: 30px;
+    margin: 10px;
+    padding: 10px;
+}
+.submitdiv {
+    padding: 10px;
+    margin-top: 20px;
+}
+.right {
+    color: cadetblue;
+}
+.material-icons {
+    color: white;
+}

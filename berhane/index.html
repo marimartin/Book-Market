@@ -2,28 +2,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     <title>Project-1</title>
 </head>
 <body>
-    <h1>Project One of Semester one</h1>
-    <p>tone analizer</p>
-
+    <div class="container">
+        <div class="row">
+            <div class="title">
+                <h1>Tone Analizer</h1>
+            </div>
+            <div class="description">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro tempore sequi, ratione, distinctio eaque aut cum alias asperiores quia inventore reprehenderit est! Maiores nobis impedit recusandae rerum, quisquam veniam dicta?</p>
+            </div>
+            <form class=" myForm col s12">
+                <h6>Enter a paragragh bellow</h6>
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">mode_edit</i>
+                    <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+                </div>
+                <div class="selectdiv">                   
+                    <label>Age Catagory</label>
+                    <select id="x" class="browser-default">
+                    <option value="" disabled selected>Select your Age Catagory</option>
+                    <option value="1">Child</option>
+                    <option value="2">Teenage</option>
+                    <option value="3">Adult</option>
+                    <option value="3">Default</option>
+                    </select>
+                </div>
+                <div class="submitdiv">
+                    <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                        <i class="material-icons right">send</i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
     <!-- <p>apikey": "OKRMlubl0Ov2Nrhzst6KTSrRWoondxNLT87VIvUnr1-U"</p> -->
 
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script>
+        $(document).ready(function() {
+                $('input#input_text, textarea#textarea2').characterCounter();
+        });
+            
         //alert('hello world');
         var textt = "I am apset today";
         var num = 1;
         function x() {
             $.ajax({
-                url:  "https://api.us-east.tone-analyzer.watson.cloud.ibm.comv?text="+textt+"OKRMlubl0Ov2Nrhzst6KTSrRWoondxNLT87VIvUnr1-U",
+                url:  "https://api.us-east.tone-analyzer.watson.cloud.ibm.comvtext="+textt+"OKRMlubl0Ov2Nrhzst6KTSrRWoondxNLT87VIvUnr1-U",
+                //url: "URL: https://api.us-south.tone-analyzer.watson.cloud.ibm.com/instances/79eb1fd9-6c8d-49d6-afda-7c890a3eebfeOKRMlubl0Ov2Nrhzst6KTSrRWoondxNLT87VIvUnr1-U",
+
+            //url:  "{url}/v3/tone?version=2017-09-21&text= Team%2C%20I%20know%20that%20times%20are%20tough%21%20Product%20sales%20have%20been%20disappointing%20for%20the%20past%20three%20quarters.%20We%20have%20a%20competitive%20product%2C%20but%20we%20need%20to%20do%20a%20better%20job%20of%20selling%20it%21",
                 method: "GET",
             }).then(function(response) {
                 console.log(response);
             });
         }
+        x();
+
     </script>
     
 </body>

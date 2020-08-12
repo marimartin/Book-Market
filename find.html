@@ -4,60 +4,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     <title>Find a Book</title>
 </head>
 
 <body>
 
-    <body>
-        <div class="container">
-            <div id="find" class="justify-center flex column">
-
-                <!-------------------------------THIS IS THE TEMPLATE FOR THE MOOD QUESTION--------------------------------------------------------->
+    <!-- <nav class="indigo darken-4"> -->
+    <nav class="black">
+        <div class="nav-wrapper">
+            <a href="#!" class="brand-logo">Logo</a>
+            <ul class="right hide-on-med-and-down">
+                <li><i class="large material-icons">home<a href="find.html"></a></i></li>
+                <!-- <li><a href="find.html">find</a></li> -->
+                <li><a href="index.html">index</a></li>
+                <li><a href="previous.html">previous</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div id="find" class="first-row row">
+            THIS IS THE TEMPLATE FOR THE MOOD QUESTION
+        </div>
+        <div class="first-row row">
+            <div>
+                <h5 id="question">What is the choice for this question?</h5>
+            </div>    
+            <div class="choice-container">
+                <label>
+                    <input type="checkbox" />
+                    <span class="choice-text" data-number="1">Choice 1</span>
+                </label>
+            </div>
+            <div class="choice-container">
+                <label>
+                    <input type="checkbox" />
+                    <span class="choice-text" data-number="2">Choice 2</span>
+                </label>
+            </div>
+            <div class="choice-container">
+                <label>
+                    <input type="checkbox" />
+                    <span class="choice-text" data-number="3">Choice 3</span>
+                </label>
+            </div>
+            <div class="choice-container">
+                <label>
+                    <input type="checkbox" />
+                    <span class="choice-text" data-number="4">Choice 4</span>
+                </label>    </div>
+            <div class="choice-container">
+                <label>
+                    <input type="checkbox" />
+                    <span class="choice-text" data-number="5">Choice 5</span>
+                </label>    </div>
+            <div class="choice-container">
+                <label>
+                    <input type="checkbox" />
+                    <span class="choice-text" data-number="6">Choice 6</span>
+                </label>
+            </div>
+            <div class="choice-container">
+                <label>
+                    <input type="checkbox" />
+                    <span class="choice-text" data-number="7">Choice 7</span>
+                </label> 
             </div>
         </div>
-        <h2 id="question">What is the choice for this question?</h2>
-        <div class="choice-container">
-            <p class="choice-text" data-number="1">Choice 1</p>
-        </div>
+        <div class="second-row row">
+            <div>
+                <h6 id="age">What is chosen for the second question?</h6>
+            </div>
 
-        <div class="choice-container">
-            <p class="choice-text" data-number="2">Choice 2</p>
+            <div class="age-container">
+                <div>
+                    <label>
+                        <input class="with-gap" name="group1" type="radio" checked />
+                        <span>Adult</span>
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        <input class="with-gap" name="group1" type="radio" />
+                        <span>Young Adult</span>
+                    </label>
+                </div>
+                    <label>
+                        <input class="with-gap" name="group1" type="radio"  />
+                        <span>Elementary</span>
+                    </label>
+                <div>
+                    <label>
+                        <input class="with-gap" name="group1" type="radio"  />
+                        <span>Pre-School</span>
+                    </label>
+                </div>
+            </div>
         </div>
-
-        <div class="choice-container">
-            <p class="choice-text" data-number="3">Choice 3</p>
-        </div>
-
-        <div class="choice-container">
-            <p class="choice-text" data-number="4">Choice 4</p>
-        </div>
-        <div class="choice-container">
-            <p class="choice-text" data-number="5">Choice 5</p>
-        </div>
-        <div class="choice-container">
-
-            <p class="choice-text" data-number="6">Choice 6</p>
-        </div>
-        <div class="choice-container">
-            <p class="choice-text" data-number="7">Choice 7</p>
-        </div>
-        </div>
-
-        <!------------------------------------THIS IS THE TEMPLATE FOR THE AGE CHOICE----------------------------------------------------------->
-        <h3 id="age">What is chosen for the second question?</h3>
-        <div class="age-container">
-            <p>Pre-School</p>
-            <p>Elementary</p>
-            <p>Young Adult</p>
-            <p>Adult</p>
-
-        </div>
-        <script src="script.js"></script>
-    </body>
-
-</html>
-
+    </div>
+    <script src="script.js"></script>
 </body>
 
 </html>

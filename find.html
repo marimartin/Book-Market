@@ -12,70 +12,58 @@
 
 <body>
 
-    <!-- <nav class="indigo darken-4"> -->
-    <nav class="black">
-        <div class="nav-wrapper">
-            <a href="#!" class="brand-logo">Logo</a>
-            <ul class="right hide-on-med-and-down">
-                <li><i class="large material-icons">home<a href="find.html"></a></i></li>
-                <!-- <li><a href="find.html">find</a></li> -->
-                <li><a href="index.html">index</a></li>
-                <li><a href="previous.html">previous</a></li>
-            </ul>
-        </div>
-    </nav>
     <div class="container">
-        <div id="find" class="first-row row">
-            THIS IS THE TEMPLATE FOR THE MOOD QUESTION
+        <div id="find">
         </div>
+        
         <div class="first-row row">
             <div>
-                <h5 id="question">What is the choice for this question?</h5>
-            </div>    
+                <h5 id="question">How are you feeling today?</h5>
+            </div>
             <div class="choice-container">
                 <label>
                     <input type="checkbox" />
-                    <span class="choice-text" data-number="1">Choice 1</span>
+                    <span class="choice-text" id="Happy"data-number="1">Happy</span>
                 </label>
             </div>
             <div class="choice-container">
                 <label>
                     <input type="checkbox" />
-                    <span class="choice-text" data-number="2">Choice 2</span>
+                    <span class="choice-text"  id="Moody" data-number="2">Moody</span>
                 </label>
             </div>
             <div class="choice-container">
                 <label>
                     <input type="checkbox" />
-                    <span class="choice-text" data-number="3">Choice 3</span>
+                    <span class="choice-text" id="curious" data-number="3">Curious</span>
                 </label>
             </div>
             <div class="choice-container">
                 <label>
                     <input type="checkbox" />
-                    <span class="choice-text" data-number="4">Choice 4</span>
-                </label>    </div>
+                    <span class="choice-text" id="Romantic" data-number="4">Romantic</span>
+                </label> </div>
             <div class="choice-container">
                 <label>
                     <input type="checkbox" />
-                    <span class="choice-text" data-number="5">Choice 5</span>
-                </label>    </div>
+                    <span class="choice-text"  id="Helpless" data-number="5">Helpless</span>
+                </label> </div>
             <div class="choice-container">
                 <label>
                     <input type="checkbox" />
-                    <span class="choice-text" data-number="6">Choice 6</span>
+                    <span class="choice-text"  id="Serious" data-number="6">Serious</span>
                 </label>
             </div>
             <div class="choice-container">
                 <label>
                     <input type="checkbox" />
-                    <span class="choice-text" data-number="7">Choice 7</span>
-                </label> 
+                    <span class="choice-text" id="Bored" data-number="7">Bored</span>
+                </label>
             </div>
         </div>
         <div class="second-row row">
             <div>
-                <h6 id="age">What is chosen for the second question?</h6>
+                <h6 id="age">How old are you?</h6>
             </div>
 
             <div class="age-container">
@@ -91,17 +79,22 @@
                         <span>Young Adult</span>
                     </label>
                 </div>
-                    <label>
-                        <input class="with-gap" name="group1" type="radio"  />
-                        <span>Elementary</span>
-                    </label>
+                <!-- <label>
+                    <input class="with-gap" name="group1" type="radio" />
+                    <span>Elementary</span>
+                </label>
                 <div>
                     <label>
-                        <input class="with-gap" name="group1" type="radio"  />
+                        <input class="with-gap" name="group1" type="radio" />
                         <span>Pre-School</span>
-                    </label>
+                    </label> -->
+                    <br></br>
                 </div>
+        
             </div>
+            <a class="btn" href="index.html">GO HOME</a>
+            <a class="btn" id="submit-btn">SUBMIT</a>
+        
         </div>
     </div>
     <script src="script.js"></script>

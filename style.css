@@ -1,0 +1,43 @@
+body {
+    background-color: snow;
+    color: wheat;
+}
+.container {
+    /* border: 2px solid red; */
+    margin-top: 20px;
+    border-radius: 20px;
+    padding: 20px;
+    background-color: rgb(93, 145, 189);
+}
+
+.first-row {
+    /* border: 2px solid seagreen; */
+    padding: 10px;
+    /* background-color: steelblue; */
+    background-color: orange ;
+
+    border-radius: 20px;
+    width: 400px;
+    font-weight: 600;
+}
+
+.choice-container{
+    margin-left: 2rem;
+}
+
+.second-row {
+    /* border: 2px solid blue; */
+    padding: 10px;
+    border-radius: 20px;
+    background-color: #2196f3 ;
+    width: 400px;
+    font-weight: 600;
+}
+.age-container {
+    margin-left: 2rem;
+}
+
+span {
+    color: navy;
+
+}

@@ -4,100 +4,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- link to Materialize -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- link to materialize icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <!-- link to google font -->
+    <link href="https://fonts.googleapis.com/css2?family=Sriracha&display=swap" rel="stylesheet">
+    <!-- link to local css -->
+    <link rel="stylesheet" href="Assets/css/style.css">
     <title>Find a Book</title>
 </head>
-
 <body>
-
     <div class="container">
         <div id="find">
-        </div>
-        
+        </div> 
         <div class="first-row row">
             <div>
-                <h5 id="question">How are you feeling today?</h5>
-            </div>
-            <div class="choice-container">
-                <label>
-                    <input type="checkbox" />
-                    <span class="choice-text" id="Happy"data-number="1">Happy</span>
-                </label>
-            </div>
-            <div class="choice-container">
-                <label>
-                    <input type="checkbox" />
-                    <span class="choice-text"  id="Moody" data-number="2">Moody</span>
-                </label>
-            </div>
-            <div class="choice-container">
-                <label>
-                    <input type="checkbox" />
-                    <span class="choice-text" id="curious" data-number="3">Curious</span>
-                </label>
-            </div>
-            <div class="choice-container">
-                <label>
-                    <input type="checkbox" />
-                    <span class="choice-text" id="Romantic" data-number="4">Romantic</span>
-                </label> </div>
-            <div class="choice-container">
-                <label>
-                    <input type="checkbox" />
-                    <span class="choice-text"  id="Helpless" data-number="5">Helpless</span>
-                </label> </div>
-            <div class="choice-container">
-                <label>
-                    <input type="checkbox" />
-                    <span class="choice-text"  id="Serious" data-number="6">Serious</span>
-                </label>
-            </div>
-            <div class="choice-container">
-                <label>
-                    <input type="checkbox" />
-                    <span class="choice-text" id="Bored" data-number="7">Bored</span>
-                </label>
+                <h3>What book are you interestd in reading?</h3>
+                <input id="book-input" type="text">
             </div>
         </div>
-        <div class="second-row row">
-            <div>
-                <h6 id="age">How old are you?</h6>
-            </div>
-
-            <div class="age-container">
-                <div>
-                    <label>
-                        <input class="with-gap" name="group1" type="radio" checked />
-                        <span>Adult</span>
-                    </label>
-                </div>
-                <div>
-                    <label>
-                        <input class="with-gap" name="group1" type="radio" />
-                        <span>Young Adult</span>
-                    </label>
-                </div>
-                <!-- <label>
-                    <input class="with-gap" name="group1" type="radio" />
-                    <span>Elementary</span>
-                </label>
-                <div>
-                    <label>
-                        <input class="with-gap" name="group1" type="radio" />
-                        <span>Pre-School</span>
-                    </label> -->
-                    <br></br>
-                </div>
-        
-            </div>
-            <a class="btn" href="index.html">GO HOME</a>
-            <a class="btn" id="submit-btn">SUBMIT</a>
-        
+        <div class="third-row row">
+            <button id="searchBook-btn" class="btn waves-effect waves-light light-blue darken-4" type="submit" name="action"><i class="material-icons right">sync</i>Search</button>
+            <a class="btn" href="index.html"><i class="material-icons">home</i>HOME </a>
+            <a class="btn green darken-4" href="previous.html"><i class="material-icons right green darken-4">archive</i>Previous Record </a>
         </div>
-    </div>
-    <script src="script.js"></script>
+    </div>       
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>  
+    <script src="Assets/JS/script.js"></script>
 </body>
-
 </html>

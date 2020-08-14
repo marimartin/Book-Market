@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,27 +12,53 @@
     <link href="https://fonts.googleapis.com/css2?family=Sriracha&display=swap" rel="stylesheet">
     <!-- link to local css -->
     <link rel="stylesheet" href="Assets/css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Find a Book</title>
 </head>
+
 <body>
     <div class="container">
         <div id="find">
-        </div> 
-        <div class="first-row row">
-            <h3>Enter a book title or an author</h3>
-            <input type="text" id="myInput" placeholder="Enter book title">
         </div>
-        <div class="third-row row">
-            <button id="searchBook-btn" class="btn waves-effect waves-light light-blue darken-4" type="submit" name="action"><i class="material-icons right">sync</i>Search</button>
-            <a class="btn" href="index.html"><i class="material-icons">home</i>HOME </a>
-            <a class="btn green darken-4" href="previous.html"><i class="material-icons right green darken-4">archive</i>Previous Record </a>
-        </div>
-    </div> 
+        <form id="book-form">
+            <div class="first-row row">
+                <h3>Enter a book title</h3>
+                <input class="book-input" type="text" id="myInput" placeholder="Enter book title">
+                <h3>or an author</h3>
+                <input class="book-input" type="text" id="myAuthorInput" placeholder="Enter book Author">
+            </div>
+            <div class="third-row row">
+                <button id="searchBook-btn" class="btn waves-effect waves-light light-blue darken-4" type="submit" name="action"><i class="material-icons right">sync</i>Search</button>
+                <a class="btn" href="index.html"><i class="material-icons">home</i>HOME </a>
+                <a class="btn green darken-4" href="previous.html"><i class="material-icons right green darken-4">archive</i>Previous Record </a>
+            </div>
+        </form>
+    </div>
     <div class="container" id="result">
-        <div id="recordedBook" class="mood-row">        
+        <div id="recordedBook" class="mood-row">
         </div>
-    </div>        
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>  
+
+        <div id="recordedBookDetails" class="mood-row">
+            <div class="flex flex-vertical-center">
+                <div class="w-10" id="back-to-list">
+                    <i class="fa fa-chevron-left size-40" aria-hidden="true"></i>
+                </div>
+                <h2 class="text-center w-70" id="book-title"></h2>
+            </div>
+            <div id="book-sub-title"></div>
+            <div>
+                <img id="book-image" />
+            </div>
+            <div id="book-description"></div>
+            <div id="book-rating"></div>
+            <button type="button" id="buy-button-container">
+                <a target="_blank" id="buy-button">Buy</a>
+            </button>
+            <div id="not-buy">Not for sale</div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="Assets/JS/script.js"></script>
 </body>
+
 </html>

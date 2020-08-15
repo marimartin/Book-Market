@@ -18,6 +18,12 @@ function renderBook() {
 }
 
 function searchBook(title, author) {
+    // Variables for setting local storage
+    var currentDate = (dayjs().$d);
+    var userInput = title;
+    var userAuthorInput = author;
+    var bothInput = (title, author)
+
     var queryURL = '';
     if (title && title.length && author && author.length) {
         queryURL = "https://www.googleapis.com/books/v1/volumes?q=" + title + "+intitle:" + title + "+inauthor:" + author + "&printType=books&download=epub&key=AIzaSyCafPwWf0r8BEYpspHQjofo1RSKo6lqXcU";
@@ -39,6 +45,7 @@ function searchBook(title, author) {
         $('#recordedBook').html('');
 
         books = response.items.slice();
+
 
         response.items.forEach(function (item, index) {
             if (title && title.length && author && author.length) {
@@ -64,24 +71,21 @@ function searchBook(title, author) {
             bookDiv.attr('data-index', index);
             bookDiv.append(bookTitle + bookAuthor + catagory + bookImage);
             $('#recordedBook').append(bookDiv);
+
         });
 
-        localStorage.setItem("title", JSON.stringify(title));
-        var isbnNumber = response.items[0].volumeInfo.industryIdentifiers[0].identifier;
-        console.log(isbnNumber)
+        // Setting local storage
+        if (title && title.length) {
+            localStorage.setItem(currentDate, userInput);
+        }
+        else if (author && author.length) {
+            localStorage.setItem(currentDate, userAuthorInput);
+        }
+        else if (title && title.length && author && author.length) {
+            localStorage.setItem(currentDate, bothInput);
+        }
+        console.log(localStorage);
     });
-
-
-
-    // }
-    // var goodreadsQueryURL = "https://cors-anywhere.herokuapp.com/https://www.goodreads.com/book/review_counts.json?isbns=9781781100486key=cU7MkZMEBPNFmw5qMfbw";
-
-    // $.ajax({
-    //     url: goodreadsQueryURL,
-    //     method: "GET"
-    // }).then(function (nextResponse) {
-    //     console.log(nextResponse)
-    // })
 
 }
 
@@ -155,9 +159,11 @@ $(document).on('click', '.bookDiv', function () {
     }
     $('#recordedBookDetails').show();
     $('#recordedBook').hide();
+    $('#book-form').hide();
 });
 
 $(document).on('click', '#back-to-list', function () {
     $('#recordedBookDetails').hide();
     $('#recordedBook').show();
+    $('#book-form').show();
 })

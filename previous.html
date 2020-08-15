@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,19 +10,24 @@
   <link rel="stylesheet" href="Assets/css/style.css">
   <title>Previous Suggestions</title>
 </head>
+
 <body>
   <div class="container" id="result">
-    
+
     <div class="mood-btn">
       <a class="btn" href="index.html"><i class="material-icons">home</i>HOME </a>
       <a class="btn light-blue darken-4" href="find.html">Search Book <i class="material-icons right">sync</i></a>
-      <button class="btn waves-effect waves-light  red darken-4" type="submit" name="action">Clear Record<i class="material-icons right">clear</i></button>
+      <button class="btn waves-effect waves-light  red darken-4" type="submit" name="action">Clear Record<i
+          class="material-icons right">clear</i></button>
     </div>
     <div id="recordedBook" class="mood-row">
 
     </div>
   </div>
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+  <script>dayjs().format()</script>
   <script src="Assets/JS/script.js"></script>
 </body>
+
 </html>

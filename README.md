@@ -1,5 +1,3 @@
-# project-1README.md
-
 # Book Market Place
 
 Book Marketplace is a quick and convenient platform for users to source a book.
@@ -17,11 +15,11 @@ Users can also navigate to and from home page to search book and the personal bo
 
 2. Provides a rating and a description for a given book
 
+![weather dashboard demo](./Assets/images/img-5.png)
 ![weather dashboard demo](./Assets/images/img-6.png)
 
 3. Provides a reliable purchase link for the chosen book after clincking the buy button
 
-![weather dashboard demo](./Assets/images/img-5.png)
 ![weather dashboard demo](./Assets/images/img-6.png)
 
 4. Stores the user's previously searched titles and authors

@@ -30,7 +30,7 @@
             <div class="third-row row">
                 <button id="searchBook-btn" class="btn waves-effect waves-light light-blue darken-4" type="submit" name="action"><i class="material-icons right">sync</i>Search</button>
                 <a class="btn" href="index.html"><i class="material-icons">home</i>HOME </a>
-                <a class="btn green darken-4" href="previous.html"><i class="material-icons right green darken-4">archive</i>Previous Record </a>
+                <a class="btn green darken-4" href="previous.html"><i class="material-icons right green darken-4">archive</i> Record </a>
             </div>
         </form>
     </div>
@@ -41,7 +41,8 @@
         <div id="recordedBookDetails" class="mood-row">
             <div class="flex flex-vertical-center">
                 <div class="w-10" id="back-to-list">
-                    <i class="fa fa-chevron-left size-40" aria-hidden="true"></i>
+                    <i id="backIcon" class=" fa fa-chevron-left size-40" aria-hidden="true"></i>
+                    <i id="backIcon" class=" fa fa-chevron-left size-40" aria-hidden="true"></i>
                 </div>
                 <h2 class="text-center w-70" id="book-title"></h2>
             </div>
@@ -50,8 +51,9 @@
                 <img id="book-image" />
             </div>
             <div id="book-description"></div>
+
             <div id="book-rating"></div>
-            <button type="button" id="buy-button-container">
+            <button class="searchBook-btn" type="button" id="buy-button-container">
                 <a target="_blank" id="buy-button">Buy</a>
             </button>
             <div id="not-buy">Not for sale</div>

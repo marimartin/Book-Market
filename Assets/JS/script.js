@@ -1,12 +1,12 @@
 var isbnNumber;
 var books = [];
 
-$(document).ready(function() {
+$(document).ready(function () {
     renderBook();
 });
 
 function renderBook() {
-    $('#book-form').submit(function(e) {
+    $('#book-form').submit(function (e) {
         e.preventDefault();
 
         var title = $('#myInput').val().trim();
@@ -35,12 +35,12 @@ function searchBook(title, author) {
     $.ajax({
         url: queryURL,
         method: "GET"
-    }).then(function(response) {
+    }).then(function (response) {
         $('#recordedBook').html('');
 
         books = response.items.slice();
 
-        response.items.forEach(function(item, index) {
+        response.items.forEach(function (item, index) {
             if (title && title.length && author && author.length) {
                 let titleOfBook = item.volumeInfo.title;
                 titleOfBook = titleOfBook.toLowerCase();
@@ -62,7 +62,7 @@ function searchBook(title, author) {
             var bookDiv = $('<div>');
             bookDiv.attr('class', 'bookDiv');
             bookDiv.attr('data-index', index);
-           bookDiv.append(bookTitle + bookAuthor + catagory + bookImage);
+            bookDiv.append(bookTitle + bookAuthor + catagory + bookImage);
             $('#recordedBook').append(bookDiv);
         });
 
@@ -85,17 +85,43 @@ function searchBook(title, author) {
 
 }
 
-$(document).on('click', '.bookDiv', function() {
+$(document).on('click', '.bookDiv', function () {
     let bookIndex = $(this).data('index');
     let book = books[bookIndex];
     console.log('target boook ', book);
 
     let title = book.volumeInfo.title;
     let subTitle = book.volumeInfo.subtitle;
-    let rating = book.volumeInfo.averageRating;
+    let googleRating = book.volumeInfo.averageRating;
     let description = book.volumeInfo.description;
     let buyLink = book.saleInfo.buyLink;
     let image = book.volumeInfo.imageLinks.smallThumbnail;
+    let isbnNumber = book.volumeInfo.industryIdentifiers[0].identifier;
+    var finalgoodreadRating
+
+    console.log(isbnNumber);
+
+    var x = new XMLHttpRequest();
+    x.open('GET', ("https://cors-anywhere.herokuapp.com/https://www.goodreads.com/book/review_counts.json?isbns=" + isbnNumber + "&key=cU7MkZMEBPNFmw5qMfbw"));
+    x.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+    x.onload = function () {
+        var fullRatingResults = x.responseText;
+        console.log(fullRatingResults);
+        var averageRating = fullRatingResults.substring(fullRatingResults.indexOf("average_rating"))
+        goodreadsRating = (averageRating.substring(averageRating.indexOf(":") + 1))
+
+        finalgoodreadRating = (goodreadsRating.substring(0, goodreadsRating.length - 3))
+        console.log('in call', finalgoodreadRating);
+
+        $('#goodreads-book-rating').html('');
+
+        console.log('in if statement', finalgoodreadRating);
+        $('#goodreads-book-rating').html('Goodreads Rating: ' + finalgoodreadRating);
+
+    };
+    x.send();
+
+
 
     $('#book-title').html('');
     $('#book-sub-title').html('');
@@ -116,8 +142,8 @@ $(document).on('click', '.bookDiv', function() {
     if (typeof description !== 'undefined') {
         $('#book-description').html(description);
     }
-    if (typeof rating !== 'undefined') {
-        $('#book-rating').html('Rating: ' + rating);
+    if (typeof googleRating !== 'undefined') {
+        $('#book-rating').html('Google Rating: ' + googleRating);
     }
     if (typeof buyLink !== 'undefined') {
         $('#buy-button').attr('href', buyLink);
@@ -131,7 +157,7 @@ $(document).on('click', '.bookDiv', function() {
     $('#recordedBook').hide();
 });
 
-$(document).on('click', '#back-to-list', function() {
+$(document).on('click', '#back-to-list', function () {
     $('#recordedBookDetails').hide();
     $('#recordedBook').show();
 })

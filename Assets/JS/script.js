@@ -17,13 +17,6 @@ function renderBook() {
     })
 }
 
-
-//var mainDate = dayjs().format('[DD/MM/YYYY]');
-// var mainDateEl = title.append(" " + mainDate);
-//console.log(mainDate);
-
-
-
 function searchBook(title, author) {
     var queryURL = '';
     if (title && title.length && author && author.length) {
@@ -62,20 +55,18 @@ function searchBook(title, author) {
             } else {
                 bookAuthor = '<p></p>';
             }
+
             var catagory = '<p>' + item.volumeInfo.categories + '</p>';
-            //var salability = '<p>'+ response.items[i].volumeInfo.saleInfo.saleability + '</>';
             var bookImage = "<img src=" + item.volumeInfo.imageLinks.smallThumbnail + ">";
+
             var bookDiv = $('<div>');
             bookDiv.attr('class', 'bookDiv');
             bookDiv.attr('data-index', index);
-            bookDiv.append(bookTitle + bookAuthor + catagory + bookImage);
+           bookDiv.append(bookTitle + bookAuthor + catagory + bookImage);
             $('#recordedBook').append(bookDiv);
         });
 
-
-
         localStorage.setItem("title", JSON.stringify(title));
-
         var isbnNumber = response.items[0].volumeInfo.industryIdentifiers[0].identifier;
         console.log(isbnNumber)
     });

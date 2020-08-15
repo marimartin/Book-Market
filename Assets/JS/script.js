@@ -5,10 +5,10 @@ $(document).ready(function () {
     renderBook();
 });
 
+
 function renderBook() {
     $('#book-form').submit(function (e) {
         e.preventDefault();
-
         var title = $('#myInput').val().trim();
         var author = $('#myAuthorInput').val().trim();
         $('#myInput').val('');
@@ -16,14 +16,13 @@ function renderBook() {
         searchBook(title, author);
     })
 }
-
+//FUNCTION TO SEARCH FOR A BOOK TITLE OR AUTHOR//
 function searchBook(title, author) {
-    // Variables for setting local storage
-    var currentDate = (dayjs().$d);
+    var currentDate = dayjs().format("DD/MM/YYYY");
     var userInput = title;
     var userAuthorInput = author;
     var bothInput = (title, author)
-
+   
     var queryURL = '';
     if (title && title.length && author && author.length) {
         queryURL = "https://www.googleapis.com/books/v1/volumes?q=" + title + "+intitle:" + title + "+inauthor:" + author + "&printType=books&download=epub&key=AIzaSyCafPwWf0r8BEYpspHQjofo1RSKo6lqXcU";
@@ -37,6 +36,8 @@ function searchBook(title, author) {
         console.log('no input provided');
         return;
     }
+
+    //AJAX CALL TO RETRIEVE INFORMATION FROM GOOGLE BOOKS API//
 
     $.ajax({
         url: queryURL,
@@ -74,20 +75,60 @@ function searchBook(title, author) {
 
         });
 
-        // Setting local storage
-        if (title && title.length) {
-            localStorage.setItem(currentDate, userInput);
-        }
-        else if (author && author.length) {
-            localStorage.setItem(currentDate, userAuthorInput);
-        }
-        else if (title && title.length && author && author.length) {
-            localStorage.setItem(currentDate, bothInput);
-        }
-        console.log(localStorage);
-    });
+        // SETTING SEARCH ITEMS TO LOCAL STORAGE//
+        var storage = localStorage.getItem("books")
+        if (storage) {
+            var bookArr = JSON.parse(storage);
+            var newBook = {};
+            if (title && title.length) {
+                newBook.title = userInput
+                newBook.date = currentDate
+            }
+            else if (author && author.length) {
+                newBook.author = userAuthorInput
+                newBook.date = currentDate
+            }
+            else if (title && title.length && author && author.length) {
+                newBook.title = userInput
+                newBook.author = userAuthorInput
+                newBook.date = currentDate
+            }
 
+        } else {
+            var bookArr = [];
+            var newBook = {};
+            if (title && title.length) {
+                newBook.title = userInput
+                newBook.date = currentDate
+            }
+            else if (author && author.length) {
+                newBook.author = userAuthorInput
+                newBook.date = currentDate
+            }
+            else if (title && title.length && author && author.length) {
+                newBook.title = userInput
+                newBook.author = userAuthorInput
+                newBook.date = currentDate
+            }
+        }
+        bookArr.push(newBook)
+        localStorage.setItem("books", JSON.stringify(bookArr))
+
+    })
+
+    if (title && title.length) {
+        localStorage.setItem(currentDate, userInput);
+    }
+    else if (author && author.length) {
+        localStorage.setItem(currentDate, userAuthorInput);
+    }
+    else if (title && title.length && author && author.length) {
+        localStorage.setItem(currentDate, bothInput);
+    }
+    console.log(localStorage);
 }
+
+
 
 $(document).on('click', '.bookDiv', function () {
     let bookIndex = $(this).data('index');
@@ -104,7 +145,7 @@ $(document).on('click', '.bookDiv', function () {
     var finalgoodreadRating
 
     console.log(isbnNumber);
-
+    //AJAX CALL FOR RETRIEVING RATING FROM GOODREADS API//
     var x = new XMLHttpRequest();
     x.open('GET', ("https://cors-anywhere.herokuapp.com/https://www.goodreads.com/book/review_counts.json?isbns=" + isbnNumber + "&key=cU7MkZMEBPNFmw5qMfbw"));
     x.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
@@ -168,13 +209,3 @@ $(document).on('click', '#back-to-list', function () {
     $('#book-form').show();
 })
 
-$('#clear').on('click', function(){
-    if (localStorage.length !== 0) {
-        var clear = confirm('Press OK to clear history!');
-        if(clear){
-            $('#recordedBook').empty();
-            localStorage.clear();
-        }
-    }
-
-});

@@ -184,8 +184,8 @@ button, a {
     font-size: 28px;
     margin: auto 10%;
 }
-#book-rating {
-    width: 100px;
+#book-rating, #goodreads-book-rating {
+    width: 250px;
     margin: 0 auto;
     color: rgb(5, 12, 5);
     font-size: 20px;

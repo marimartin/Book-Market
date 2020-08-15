@@ -34,5 +34,5 @@ Users can also navigate to and from home page to search book and the personal bo
 5. Dayjs was utilized to log the date of the search
 6. Font awesome was utilized for styling all fonts
 
-
-
+#link to the functional url
+https://marimartin.github.io/project-1/index.html

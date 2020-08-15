@@ -65,25 +65,14 @@ function searchBook(title, author) {
             bookDiv.append(bookTitle + bookAuthor + catagory + bookImage);
             $('#recordedBook').append(bookDiv);
         });
-
+      
         localStorage.setItem("title", JSON.stringify(title));
         var isbnNumber = response.items[0].volumeInfo.industryIdentifiers[0].identifier;
         console.log(isbnNumber)
     });
 
-
-
-    // }
-    // var goodreadsQueryURL = "https://cors-anywhere.herokuapp.com/https://www.goodreads.com/book/review_counts.json?isbns=9781781100486key=cU7MkZMEBPNFmw5qMfbw";
-
-    // $.ajax({
-    //     url: goodreadsQueryURL,
-    //     method: "GET"
-    // }).then(function (nextResponse) {
-    //     console.log(nextResponse)
-    // })
-
 }
+
 
 $(document).on('click', '.bookDiv', function () {
     let bookIndex = $(this).data('index');
@@ -161,3 +150,15 @@ $(document).on('click', '#back-to-list', function () {
     $('#recordedBookDetails').hide();
     $('#recordedBook').show();
 })
+
+
+$('#clear').on('click', function(){
+    if (localStorage.length !== 0) {
+        var clear = confirm('Press OK to clear history!');
+        if(clear){
+            $('#recordedBook').empty();
+            localStorage.clear();
+        }
+    }
+
+});

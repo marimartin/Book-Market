@@ -177,11 +177,12 @@ button, a {
 /* ****** ditail and descrption css ******* */
 #book-title {
     font-size: 40px;
+    font-weight: 100;
     text-align: center;
-    color: red;
+    color: navy;
 }
 #book-description {
-    font-size: 28px;
+    font-size: 20px;
     margin: auto 10%;
 }
 #book-rating, #goodreads-book-rating {
@@ -210,8 +211,8 @@ button, a {
 }
 
 #book-image {
-    width: 40%;
-    height: auto;
+    width: auto;
+    height: 250px;
 }
 /* ***************** */
 

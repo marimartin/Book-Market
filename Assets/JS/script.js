@@ -167,3 +167,14 @@ $(document).on('click', '#back-to-list', function () {
     $('#recordedBook').show();
     $('#book-form').show();
 })
+
+$('#clear').on('click', function(){
+    if (localStorage.length !== 0) {
+        var clear = confirm('Press OK to clear history!');
+        if(clear){
+            $('#recordedBook').empty();
+            localStorage.clear();
+        }
+    }
+
+});

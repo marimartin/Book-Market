@@ -20,6 +20,7 @@
     <div class="container">
         <div id="find">
         </div>
+        <!------------------------FORM FOR USER INPUT-------------------------------------------------->
         <form id="book-form">
             <div class="first-row row">
                 <h5>Search by Book Title:</h5>
@@ -27,44 +28,50 @@
                 <h5>Search by Author:</h5>
                 <input class="book-input" type="text" id="myAuthorInput" placeholder="Enter book Author">
             </div>
+            <!-------------------------------BUTTONS TO NAVIGATE TO HOME PAGE AND SEARCH-------------------------------------------------->
             <div class="third-row row">
                 <button id="searchBook-btn" class="btn waves-effect waves-light light-blue darken-4" type="submit"
                     name="action"><i class="material-icons right">sync</i>Search</button>
                 <a class="btn" href="index.html"><i class="material-icons">home</i>HOME </a>
-                <a class="btn green darken-4" href="previous.html"><i
-                        class="material-icons right green darken-4">archive</i> Record </a>
+
             </div>
         </form>
     </div>
     <div class="container" id="result">
         <div id="recordedBook" class="mood-row">
         </div>
-
+        <!----------------SEARCH RESULTS ARE DYNAMICALLY INSERTED HERE----------------------------------->
         <div id="recordedBookDetails" class="mood-row">
             <div class="flex flex-vertical-center">
                 <div class="w-10" id="back-to-list">
                     <i id="backIcon" class=" fa fa-chevron-left size-40" aria-hidden="true"></i>
                     <i id="backIcon" class=" fa fa-chevron-left size-40" aria-hidden="true"></i>
                 </div>
+                <!----------------------BOOK TITLE GOES HERE------------------------------->
                 <h2 class="text-center w-70" id="book-title"></h2>
             </div>
+            <!--------------------------------BOOK ONE LINER GOES HERE------------------------------------->
             <div id="book-sub-title"></div>
             <div>
+
+                <!-----------------------------------BOOK COVER IMAGE GOES HERE--------------------------------------------->
                 <img id="book-image" />
             </div>
+            <!----------------------------------------PLOT SUMMARY GOES HERE------------------------------------------------->
             <div id="book-description"></div>
-
+            <!--------------------------------------BOOK RATING GOES HERE------------------------------------------------------------>
             <div id="book-rating"></div>
             <div id="goodreads-book-rating"></div>
+            <!------------------------------------THE BUY BUTTON IS HERE----------------------------------------------------------->
             <button class="searchBook-btn" type="button" id="buy-button-container">
                 <a target="_blank" id="buy-button">Buy</a>
             </button>
             <div id="not-buy">Not for sale</div>
         </div>
     </div>
+    <!--------------SCRIPT TAGS-JQUERY, DAYJS & JAVASCRIPT FILE---------------------------------------------->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
-    <script>dayjs().format()</script>
     <script src="Assets/JS/script.js"></script>
 </body>
 

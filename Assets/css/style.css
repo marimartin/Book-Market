@@ -71,6 +71,7 @@ span {
     flex-wrap: nowrap;
     flex-direction: column;
     align-items: center;
+    padding-bottom: 60px;
 }
 
 .hero {
@@ -109,7 +110,7 @@ button, a {
     display: flex;
     margin: 0;
     flex-wrap: wrap;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -133,8 +134,23 @@ button, a {
     display: none;
     margin: auto 15%;
     background-color: white;
-    padding: 20px;
+    padding: 0;
     margin: 0;
+}
+
+.book-history {
+    max-width: 320px;
+    display: flex;
+    flex-wrap: wrap;
+    align-self: flex-start;
+    margin: 5px;
+    border-radius: 10px;
+    background-color: rgb(46, 46, 109);
+}
+.book-history p {
+    font-size: 20px;
+    margin-left: 10px;
+    color: moccasin;
 }
 
 .flex {
@@ -218,6 +234,7 @@ button, a {
 }
 /* ***************** */
 
+
 /* *******STORED SEARCH ITEM STYLES********** */
 .saved{
  color: wheat;
@@ -240,7 +257,17 @@ button, a {
     .third-row {
         max-width: 480px;
     } 
-  }
+
+    .book-history {
+        max-width: 480px;
+        margin: 5px;
+    }
+    .book-history p {
+        font-size: 20px;
+        margin-right: 10px;
+    }
+
+}
   
   @media screen and (min-width: 480px) {
     h1 {
@@ -264,6 +291,21 @@ button, a {
         max-width: 100%;
     }
     
+    .flex {
+        display: flex;
+        flex-direction: row;
+    }
+    .book-history {
+        max-width: 678px;
+        margin: 5px;
+    }
+    .book-history p {
+        font-size: 20px;
+        margin-right: 10px;
+    }
+}
+
+@media screen and (min-width: 613px) {
     .mood-btn {
         margin: 10px;
         display: flex;
@@ -272,24 +314,21 @@ button, a {
         justify-content: space-around;
         align-items: center;
     }
-    .flex {
-        display: flex;
-        flex-direction: row;
-    }
 }
 
 @media screen and (min-width: 678px) {
     h1 {
         font-size: 70px;
     }
-    .first-row {
-        max-width: 600px;
-    }
-    .third-row {
-        max-width: 600px;
-    }   
+      
     .flex {
         display: flex;
         flex-direction: row;
+    }
+    .book-history {
+        max-width: 800px;
+    }
+    .book-history p {
+        font-size: 28px;
     }
 }

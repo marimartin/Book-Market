@@ -106,10 +106,10 @@ button, a {
 }
 
 #recordedBook {
-    display: flex;
+    /* display: flex; */
     margin: 0;
     flex-wrap: wrap;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }

@@ -11,11 +11,12 @@ $(document).ready(function () {
         //APPENDING SEARCH ITEMS TO THE PAGE WITH THE DATE//
         var textContent = $("<p>").text(bookTitle);
         var dateText = $("<p>").text(date);
-        var recordedBook = $("#recordedBook").append(textContent,dateText);
+        console.log(date);
+        $("#recordedBook").append(textContent, dateText);
 
         var authorName = book.author;
         var authorContent = $("<p>").text(authorName);
-        var recordedAuthor =$("#recordedBook").append(authorName, dateText);
+        $("#recordedBook").append(authorName, dateText);
     }
 });
 // EVENT HANDLER TO CLEAR STORED SEARCH ITEMS//

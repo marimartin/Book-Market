@@ -107,7 +107,7 @@ button, a {
 }
 
 #recordedBook {
-    display: flex;
+    /* display: flex; */
     margin: 0;
     flex-wrap: wrap;
     flex-direction: column;

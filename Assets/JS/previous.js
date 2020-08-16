@@ -12,6 +12,7 @@ $(document).ready(function () {
 
         var textContent = $("<p>").text(bookTitle);
         var dateText = $("<p>").text(date);
+
         var bookContentDiv = $('<div>').attr('class', 'book-history');
         bookContentDiv.append(textContent,dateText)
 

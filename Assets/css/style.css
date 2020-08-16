@@ -237,9 +237,19 @@ button, a {
 
 /* *******STORED SEARCH ITEM STYLES********** */
 .saved{
- color: wheat;
+ color: black;
  font-size: medium;
  font-weight: bold;
+ background-color: wheat;
+ justify-content: center;
+
+ 
+}
+.author{
+    background-color: rgb(52, 212, 196);
+    justify-content: center;
+    color: black;
+    font-weight: bold;
 }
 /* *******RESPONSIVE DESIGN********** */
 

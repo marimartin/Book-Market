@@ -9,14 +9,19 @@ $(document).ready(function () {
         var bookTitle = book.title;
         var date = book.date;
         //APPENDING SEARCH ITEMS TO THE PAGE WITH THE DATE//
+
         var textContent = $("<p>").text(bookTitle);
         var dateText = $("<p>").text(date);
-        console.log(date);
-        $("#recordedBook").append(textContent, dateText);
 
-        var authorName = book.author;
-        var authorContent = $("<p>").text(authorName);
-        $("#recordedBook").append(authorName, dateText);
+        var bookContentDiv = $('<div>').attr('class', 'book-history');
+        bookContentDiv.append(textContent,dateText)
+
+        $("#recordedBook").prepend(bookContentDiv);
+
+        var authorName = $("<p>").text(authorName);
+        bookContentDiv.append(authorName);
+
+        $("#recordedBook").prepend(bookContentDiv);
     }
 });
 // EVENT HANDLER TO CLEAR STORED SEARCH ITEMS//

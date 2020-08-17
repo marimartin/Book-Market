@@ -182,7 +182,7 @@ button, a {
     flex-wrap: nowrap;
     flex-direction: row;
     margin: 2px;
-    background-color: yellow;
+    background-color: maroon;
     border-bottom-left-radius: 15px;
     border-top-left-radius: 15px;
 }
@@ -190,7 +190,7 @@ button, a {
     cursor: w-resize;
 }
 .w-10:hover {
-    box-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+    box-shadow: 1px 1px 2px black, 0 0 25px gold, 0 0 5px gold;
     text-shadow: 1px 1px 2px black, 0 0 5px #0000;
 }
 
@@ -215,15 +215,15 @@ button, a {
 #book-rating, #goodreads-book-rating {
     width: 250px;
     margin: 0 auto;
-    color: rgb(5, 12, 5);
+    color: black;
     font-size: 20px;
-    background-color: yellow;
+    background-color: green;
 }
 #buy-button-container{
     background-color: maroon;
 }
 #buy-button-container:hover {
-    box-shadow: 1px 1px 2px black, 0 0 25px maroon, 0 0 5px darkblue;
+    box-shadow: 1px 1px 2px black, 0 0 25px gold, 0 0 5px gold;
     text-shadow: 1px 1px 2px black, 0 0 5px #0000;
     margin: 10px;
 }
@@ -233,7 +233,7 @@ button, a {
     color: whitesmoke;
 }
 #not-buy {
-    color: green;
+    color: maroon;
     font-size: 25px;
 }
 

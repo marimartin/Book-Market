@@ -8,18 +8,18 @@ $(document).ready(function () {
 
         var bookTitle = book.title;
         var date = book.date;
-        var textContent = $("<div>").text(bookTitle);
+        var textContent = $("<div>").attr('class', 'savedTitle').text(bookTitle);
         var dateText = $("<div>").text(date);
         if (bookTitle && dateText) {
             $("#recordedBook").append(textContent, dateText);
         }
 
         var authorName = book.author;
-        var authorContent = $("<div>").text(authorName);
+        var authorContent = $("<div>").attr('class', 'savedAuthor').text(authorName);
 
         if (authorName && dateText){
 
-            $("#recordedAuthor").append(authorName, dateText);
+            $("#recordedAuthor").append(authorContent, dateText);
     }
     }})
 

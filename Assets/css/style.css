@@ -7,7 +7,7 @@ body {
 }
 
 h1 {
-    color: wheat;
+    color: goldenrod;
     font-size: 30px;
     text-align: center;
 }
@@ -22,7 +22,7 @@ h3 {
     margin-top: 20px;
     border-radius: 20px;
     padding: 20px;
-    background-color: rgb(93, 145, 189);
+    background-color: rgb(10, 143, 143);
 }
 
 .first-row {
@@ -77,7 +77,7 @@ span {
 }
 
 .hero {
-    background-image: url("../images/book.jpg");
+    background-image: url("../images/Copy_of_1526_rare_book_store_4.jpg");
     max-width: 100%;
     min-height: 400px;
 }
@@ -126,14 +126,14 @@ button, a {
 
 
 .bookDiv {
-    background-color: snow;
+    background-color: goldenrod;
     padding: 20px;
     margin: 10px;
     max-width: 350px;
     border-radius: 20px;
 } 
 .bookDiv:hover {
-    box-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+    box-shadow: 1px 1px 2px black, 0 0 25px gold, 0 0 5px darkblue;
     text-shadow: 1px 1px 2px black, 0 0 5px #0000;
     font-weight: 800;
     cursor: pointer;
@@ -143,7 +143,7 @@ button, a {
 #recordedBookDetails {
     display: none;
     margin: auto 15%;
-    background-color: white;
+    background-color: goldenrod;
     padding: 0;
     margin: 0;
 }
@@ -206,7 +206,7 @@ button, a {
     font-size: 40px;
     font-weight: 100;
     text-align: center;
-    color: navy;
+    color: maroon;
 }
 #book-description {
     font-size: 20px;
@@ -220,10 +220,10 @@ button, a {
     background-color: yellow;
 }
 #buy-button-container{
-    background-color: blue;
+    background-color: maroon;
 }
 #buy-button-container:hover {
-    box-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+    box-shadow: 1px 1px 2px black, 0 0 25px maroon, 0 0 5px darkblue;
     text-shadow: 1px 1px 2px black, 0 0 5px #0000;
     margin: 10px;
 }
@@ -244,7 +244,7 @@ button, a {
 /* ***************** */
 
 .saved{
- color: black;
+ color: maroon;
  font-size: medium;
  font-weight: bold;
  background-color: wheat;
@@ -255,9 +255,9 @@ button, a {
  border-radius: 6px; 
 }
 .author {
-    background-color: rgb(52, 212, 196);
+    background-color: wheat;
     justify-content: center;
-    color: black;
+    color: maroon;
     font-weight: bold;
     padding: 20px;
     margin-top: 10px;

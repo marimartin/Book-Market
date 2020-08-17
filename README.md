@@ -2,25 +2,22 @@
 
 Book Market  is a quick and convenient platform to source a book or to learn more about the works of an author.
 
-![weather dashboard demo](./Assets/images/img-1.png)
-![weather dashboard demo](./Assets/images/img-2.png)
-![weather dashboard demo](./Assets/images/img-3.png)
 
 # The application has the following features:
 
 1. Users are able to search a vast database of book titles and authors. 
 
-![weather dashboard demo](./Assets/images/img-4.png)
-
 2. Users receive ratings from the Google Books and GoodReads online book review forums and a plot summary.
 
-![weather dashboard demo](./Assets/images/img-5.png)
-![weather dashboard demo](./Assets/images/img-6.png)
-
 3. Provides a reliable purchase link for the chosen book once the buy button is clicked
-![weather dashboard demo](./Assets/images/img-6.png)
 
 4. Stores the user's previously searched titles and authors
+
+# Demos
+
+<img src="/Assets/images/mobile-demo.gif">
+<img src="/Assets/images/desktop-demo.gif">
+
 
 # To develop the project, the following processes were implemented:
 
@@ -33,4 +30,4 @@ Book Market  is a quick and convenient platform to source a book or to learn mor
 6. Font awesome was utilized for styling all fonts
 
 #link to the functional url
-https://marimartin.github.io/project-1/index.html
+https://marimartin.github.io/Book-Market/

@@ -2,6 +2,22 @@ var isbnNumber;
 var books = [];
 
 $(document).ready(function () {
+    // SETTING INPUT VALUES IF LOADED FROM HISTORY PAGE
+    var authorSearch = localStorage.getItem("authorSearchTerms");
+    var bookSearch = localStorage.getItem("bookSearchTerms");
+    if (authorSearch) {
+        $('#myInput').val("");
+        $('#myAuthorInput').val(authorSearch);
+        searchBook("", authorSearch);
+        localStorage.setItem('authorSearchTerms', "");
+    }
+    if (bookSearch) {
+        $('#myAuthorInput').val("")
+        $('#myInput').val(bookSearch);
+        searchBook(bookSearch, "");
+        localStorage.setItem('bookSearchTerms', "");
+    }
+
     renderBook();
 });
 
@@ -22,7 +38,7 @@ function searchBook(title, author) {
     var userInput = title;
     var userAuthorInput = author;
     var bothInput = (title, author)
-   
+
     var queryURL = '';
     if (title && title.length && author && author.length) {
         queryURL = "https://www.googleapis.com/books/v1/volumes?q=" + title + "+intitle:" + title + "+inauthor:" + author + "&printType=books&download=epub&key=AIzaSyCafPwWf0r8BEYpspHQjofo1RSKo6lqXcU";
@@ -33,7 +49,6 @@ function searchBook(title, author) {
     }
 
     if (queryURL == '') {
-        console.log('no input provided');
         return;
     }
 
@@ -125,7 +140,6 @@ function searchBook(title, author) {
     else if (title && title.length && author && author.length) {
         localStorage.setItem(currentDate, bothInput);
     }
-    console.log(localStorage);
 }
 
 
@@ -133,7 +147,6 @@ function searchBook(title, author) {
 $(document).on('click', '.bookDiv', function () {
     let bookIndex = $(this).data('index');
     let book = books[bookIndex];
-    console.log('target boook ', book);
 
     let title = book.volumeInfo.title;
     let subTitle = book.volumeInfo.subtitle;
@@ -144,29 +157,23 @@ $(document).on('click', '.bookDiv', function () {
     let isbnNumber = book.volumeInfo.industryIdentifiers[0].identifier;
     var finalgoodreadRating
 
-    console.log(isbnNumber);
     //AJAX CALL FOR RETRIEVING RATING FROM GOODREADS API//
     var x = new XMLHttpRequest();
     x.open('GET', ("https://cors-anywhere.herokuapp.com/https://www.goodreads.com/book/review_counts.json?isbns=" + isbnNumber + "&key=cU7MkZMEBPNFmw5qMfbw"));
     x.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
     x.onload = function () {
         var fullRatingResults = x.responseText;
-        console.log(fullRatingResults);
         var averageRating = fullRatingResults.substring(fullRatingResults.indexOf("average_rating"))
-        goodreadsRating = (averageRating.substring(averageRating.indexOf(":") + 1))
+        var goodreadsRating = (averageRating.substring(averageRating.indexOf(":") + 1))
 
         finalgoodreadRating = (goodreadsRating.substring(0, goodreadsRating.length - 3))
-        console.log('in call', finalgoodreadRating);
 
         $('#goodreads-book-rating').html('');
 
-        console.log('in if statement', finalgoodreadRating);
         $('#goodreads-book-rating').html('Goodreads Rating: ' + finalgoodreadRating);
 
     };
     x.send();
-
-
 
     $('#book-title').html('');
     $('#book-sub-title').html('');
@@ -176,7 +183,6 @@ $(document).on('click', '.bookDiv', function () {
     $('#book-image').attr('src', 'https://www.stleos.uq.edu.au/wp-content/uploads/2016/08/image-placeholder-350x350.png');
     $('#buy-button-container').hide();
     $('#not-buy').show();
-
 
     if (typeof title !== 'undefined') {
         $('#book-title').html(title);
@@ -209,3 +215,50 @@ $(document).on('click', '#back-to-list', function () {
     $('#book-form').show();
 })
 
+
+// PREVIOUS.HTML JS
+
+// FUNCTION TO RETRIEVE SEARCH ITEMS -BOOK OR TITLE- FROM LOCAL STORAGE//
+
+$(document).ready(function () {
+    var books = JSON.parse(localStorage.getItem("books"))
+    for (var i = 0; i < books.length; i++) {
+        var book = books[i];
+
+        var bookTitle = book.title;
+        var date = book.date;
+        var textContent = $("<a href='find.html'>").attr('class', 'savedTitle').text(bookTitle);
+        var dateText = $("<div>").text(date);
+        if (bookTitle && dateText) {
+            $("#recordedBookDiv").append(textContent, dateText);
+        }
+
+        var authorName = book.author;
+        var authorContent = $("<a href='find.html'>").attr('class', 'savedAuthor').text(authorName);
+
+        if (authorName && dateText) {
+
+            $("#recordedAuthorDiv").append(authorContent, dateText);
+        }
+    }
+})
+
+
+// EVENT HANDLER TO CLEAR STORED SEARCH ITEMS//
+$('#clear').on('click', function () {
+    if (localStorage.length !== 0) {
+        $('#recordedBookDiv').empty();
+        $('#recordedAuthorDiv').empty();
+        localStorage.clear();
+    }
+
+});
+
+// SETTING SEARCH TERMS FROM HISTORY TO LOCAL STORAGE
+$("body").on('click', ".savedTitle", function () {
+    localStorage.setItem('bookSearchTerms', $(this).text());
+})
+
+$("body").on('click', ".savedAuthor", function () {
+    localStorage.setItem('authorSearchTerms', $(this).text());
+})

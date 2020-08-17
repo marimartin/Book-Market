@@ -1,7 +1,6 @@
-# Book Market Place
+# Book Market
 
-Book Marketplace is a quick and convenient platform for users to source a book.
-Users can also navigate to and from home page to search book and the personal book stores. 
+Book Market  is a quick and convenient platform to source a book or to learn more about the works of an author.
 
 ![weather dashboard demo](./Assets/images/img-1.png)
 ![weather dashboard demo](./Assets/images/img-2.png)
@@ -9,17 +8,16 @@ Users can also navigate to and from home page to search book and the personal bo
 
 # The application has the following features:
 
-1. Allows the user to search for any author or book title
+1. Users are able to search a vast database of book titles and authors. 
 
 ![weather dashboard demo](./Assets/images/img-4.png)
 
-2. Provides a rating and a description for a given book
+2. Users receive ratings from the Google Books and GoodReads online book review forums and a plot summary.
 
 ![weather dashboard demo](./Assets/images/img-5.png)
 ![weather dashboard demo](./Assets/images/img-6.png)
 
-3. Provides a reliable purchase link for the chosen book after clincking the buy button
-
+3. Provides a reliable purchase link for the chosen book once the buy button is clicked
 ![weather dashboard demo](./Assets/images/img-6.png)
 
 4. Stores the user's previously searched titles and authors

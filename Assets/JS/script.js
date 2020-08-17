@@ -27,13 +27,14 @@ function renderBook() {
         e.preventDefault();
         var title = $('#myInput').val().trim();
         var author = $('#myAuthorInput').val().trim();
-        $('#myInput').val('');
-        $('#myAuthorInput').val('');
         searchBook(title, author);
     })
 }
+
 //FUNCTION TO SEARCH FOR A BOOK TITLE OR AUTHOR//
 function searchBook(title, author) {
+    $('#myInput').val('');
+    $('#myAuthorInput').val('');
     var currentDate = dayjs().format("DD/MM/YYYY");
     var userInput = title;
     var userAuthorInput = author;
@@ -170,7 +171,7 @@ $(document).on('click', '.bookDiv', function () {
 
         $('#goodreads-book-rating').html('');
 
-        $('#goodreads-book-rating').html('Goodreads Rating: ' + finalgoodreadRating);
+        $('#goodreads-book-rating').html('Goodreads Rating: ' + finalgoodreadRating + "/5");
 
     };
     x.send();
@@ -194,7 +195,7 @@ $(document).on('click', '.bookDiv', function () {
         $('#book-description').html(description);
     }
     if (typeof googleRating !== 'undefined') {
-        $('#book-rating').html('Google Rating: ' + googleRating);
+        $('#book-rating').html('Google Rating: ' + googleRating + "/5");
     }
     if (typeof buyLink !== 'undefined') {
         $('#buy-button').attr('href', buyLink);
@@ -221,24 +222,26 @@ $(document).on('click', '#back-to-list', function () {
 // FUNCTION TO RETRIEVE SEARCH ITEMS -BOOK OR TITLE- FROM LOCAL STORAGE//
 
 $(document).ready(function () {
-    var books = JSON.parse(localStorage.getItem("books"))
-    for (var i = 0; i < books.length; i++) {
-        var book = books[i];
+    var books = JSON.parse(localStorage.getItem("books"));
+    if (books) {
+        for (var i = 0; i < books.length; i++) {
+            var book = books[i];
 
-        var bookTitle = book.title;
-        var date = book.date;
-        var textContent = $("<a href='find.html'>").attr('class', 'savedTitle').text(bookTitle);
-        var dateText = $("<div>").text(date);
-        if (bookTitle && dateText) {
-            $("#recordedBookDiv").append(textContent, dateText);
-        }
+            var bookTitle = book.title;
+            var date = book.date;
+            var textContent = $("<a href='find.html'>").attr('class', 'savedTitle').text(bookTitle);
+            var dateText = $("<div>").attr('class', 'savedDate').text(date);
+            if (bookTitle && dateText) {
+                $("#recordedBookDiv").prepend(textContent, dateText);
+            }
 
-        var authorName = book.author;
-        var authorContent = $("<a href='find.html'>").attr('class', 'savedAuthor').text(authorName);
+            var authorName = book.author;
+            var authorContent = $("<a href='find.html'>").attr('class', 'savedAuthor').text(authorName);
 
-        if (authorName && dateText) {
+            if (authorName && dateText) {
 
-            $("#recordedAuthorDiv").append(authorContent, dateText);
+                $("#recordedAuthorDiv").prepend(authorContent, dateText);
+            }
         }
     }
 })
@@ -257,8 +260,10 @@ $('#clear').on('click', function () {
 // SETTING SEARCH TERMS FROM HISTORY TO LOCAL STORAGE
 $("body").on('click', ".savedTitle", function () {
     localStorage.setItem('bookSearchTerms', $(this).text());
+    $('#myInput').val('');
 })
 
 $("body").on('click', ".savedAuthor", function () {
     localStorage.setItem('authorSearchTerms', $(this).text());
+    $('#myAuthorInput').val('');
 })

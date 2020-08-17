@@ -8,7 +8,7 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Sriracha&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="Assets/css/style.css">
-  <title>Book Market| Previous Suggestions</title>
+  <title>Book Market| Previous Searches</title>
 </head>
 
 <body>
@@ -16,24 +16,27 @@
     <h1> BOOK MARKET </h1>
     <!----------------------------------------BUTTONS TO NAVIGATE TO THE HOME PAGE AND SEARCH PAGE---------------------------------------------->
     <div class="mood-btn">
-      <a class="btn" href="index.html"><i class="material-icons right">home</i>HOME </a>
       <a class="btn light-blue darken-4" href="find.html">SEARCH AGAIN<i class="material-icons right">sync</i></a>
-      <button id="clear" class="btn waves-effect waves-light  red darken-4" type="submit" name="action">CLEAR HISTORY<i
+      <a class="btn" href="index.html"><i class="material-icons right">home</i>HOME </a>
+      <button id="clear" class="btn waves-effect waves-light red darken-4" type="submit" name="action">CLEAR HISTORY<i
           class="material-icons right">clear</i></button>
     </div>
     <!-----------------------------SAVED SEARCH RESULTS ARE DYNAMICALLY INSERTED HERE---------------------------------------------------->
     <div id="recordedBook" class="saved recorSave">
       <h4>TITLES SEARCHED</h4>
+      <div id="recordedBookDiv"></div>
     </div>
     <div id="recordedAuthor" class="author">
       <h4>AUTHORS SEARCHED</h4>
+      <div id="recordedAuthorDiv"></div>
     </div>
 
     <!--------------------------SCRIPT TAGS----------------------------------------->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
     <script>src = "https://unpkg.com/dayjs@1.8.21/dayjs.min.js"</script>
-    <script src="Assets/JS/previous.js"></script>
+    <!-- <script src="Assets/JS/previous.js"></script> -->
+    <script src="Assets/JS/script.js"></script>
 </body>
 
 </html>

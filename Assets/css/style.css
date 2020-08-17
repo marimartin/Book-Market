@@ -1,0 +1,398 @@
+
+/* ************* GENERAL STYLES FOR ALL PAGES *************** */
+
+body {
+    background-color: linen;
+    font-weight: 800;
+    font-family: 'Sriracha', cursive;
+}
+
+h1 {
+    color: goldenrod;
+    font-size: 30px;
+    text-align: center;
+}
+h2 {
+    font-size: 25px;
+}
+h3 {
+    font-size: 25px;
+}
+h4 {
+    text-align: center;
+    border-bottom: 3px solid #000000;
+}
+
+.container {
+    margin-top: 20px;
+    border-radius: 20px;
+    padding: 20px;
+    background-color: rgb(10, 143, 143);
+}
+
+.first-row {
+    padding: 20px;
+    background-color: wheat;
+    border-radius: 15px;
+    max-width: 320px;
+    font-weight: 800;
+}
+
+.choice-container {
+    margin-left: 2rem;
+}
+
+.third-row {
+    padding: 20px;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    text-align: center;
+    background-color: wheat;
+    border-radius: 15px;
+    max-width: 320px;
+    font-weight: 600;
+}
+
+.age-container {
+    margin-left: 2rem;
+}
+
+span {
+    color: navy;
+}
+
+.container-home {
+    padding-top: 25px;
+}
+
+.mood-row {
+    text-align: center;
+    border-radius: 20px;
+    font-weight: 600;
+    margin: 0 auto;
+}
+
+.mood-btn {
+    margin: 10px;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 60px;
+    font-family: 'Sriracha', cursive;
+}
+
+.hero {
+    background-image: url("../images/Copy_of_1526_rare_book_store_4.jpg");
+    max-width: 100%;
+    min-height: 400px;
+    border-radius: 25px;
+    border-color: goldenrod;
+    border-width: 5px;
+    border-style: solid;
+}
+button, a {
+    margin: 5px;
+}
+
+#buy-button {
+    display: block;
+    padding: 10px 50px;
+    color: black;
+    text-decoration: none;
+}
+
+#buy-button-container {
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+#book-rating {
+    margin: 30px 0px;
+}
+
+.btn { 
+    border-radius: 10px;
+    font-family: 'Sriracha', cursive;
+}
+a { 
+    color: maroon;
+}
+
+a:hover {
+    color: goldenrod;
+}
+
+#clear:hover {
+    color: goldenrod;
+}
+#searchBook-btn:hover {
+    color: goldenrod;
+}
+/* ************* RESULT DIV STYLES *************** */
+
+.book-input {
+    background-color: seashell !important;
+}
+
+/* *************************************************** */
+#recordedBook {
+    display: flex;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.recorResult {
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+/* *************************************************** */
+
+
+.bookDiv {
+    background-color: goldenrod;
+    padding: 20px;
+    margin: 10px;
+    max-width: 350px;
+    border-radius: 20px;
+    color: white;
+} 
+.bookDiv:hover {
+    box-shadow: 1px 1px 2px black, 0 0 25px gold, 0 0 5px darkblue;
+    text-shadow: 1px 1px 2px black, 0 0 5px #0000;
+    font-weight: 800;
+    cursor: pointer;
+    padding: 18px;
+}
+
+#recordedBookDetails {
+    display: none;
+    margin: auto 15%;
+    background-color: goldenrod;
+    padding: 0;
+    margin: 0;
+}
+.book-history {
+    max-width: 320px;
+    display: flex;
+    flex-wrap: wrap;
+    align-self: flex-start;
+    margin: 5px;
+    border-radius: 10px;
+    background-color: rgb(46, 46, 109);
+}
+.book-history p {
+    font-size: 20px;
+    margin-left: 10px;
+    color: moccasin;
+}
+
+.flex {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-vertical-center {
+    align-items: center;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.w-10 {
+    flex-direction: row;
+    width: 70px;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    margin: 2px;
+    background-color: maroon;
+    border-bottom-left-radius: 15px;
+    border-top-left-radius: 15px;
+}
+.w-10:hover{
+    cursor: w-resize;
+}
+.w-10:hover {
+    box-shadow: 1px 1px 2px black, 0 0 25px gold, 0 0 5px gold;
+    text-shadow: 1px 1px 2px black, 0 0 5px #0000;
+}
+
+.w-70 {
+    width: 70%;
+}
+
+.size-40 {
+    font-size: 40px !important;
+}
+/* ****** BOOK DESCRIPTION & RATINGS STYLES ******* */
+#book-title {
+    font-size: 40px;
+    font-weight: 100;
+    text-align: center;
+    color: maroon;
+}
+#book-description {
+    font-size: 20px;
+    margin: auto 10%;
+}
+#book-rating, #goodreads-book-rating {
+    width: 250px;
+    margin: 0 auto;
+    color: black;
+    font-size: 20px;
+    background-color: green;
+}
+#buy-button-container{
+    background-color: maroon;
+}
+#buy-button-container:hover {
+    box-shadow: 1px 1px 2px black, 0 0 25px gold, 0 0 5px gold;
+    text-shadow: 1px 1px 2px black, 0 0 5px #0000;
+    margin: 10px;
+}
+
+#buy-button {
+    font-size: 20px;
+    color: whitesmoke;
+}
+#not-buy {
+    color: maroon;
+    font-size: 25px;
+}
+
+#book-image {
+    width: auto;
+    height: 250px;
+}
+/* ***************** */
+
+.saved{
+    color: maroon;
+    font-size: medium;
+    font-weight: bold;
+    background-color: wheat;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+    margin-bottom: 10px;
+    border-radius: 6px; 
+}
+.author {
+    background-color: wheat;
+    justify-content: center;
+    color: maroon;
+    font-weight: bold;
+    padding: 20px;
+    margin-top: 10px;
+    border-radius: 6px;
+}
+.savedTitle {
+    font-size: 24px;
+    margin-top: 10px;
+}
+.savedDate {
+    padding: 5px;
+    border-bottom: 2px solid #000000;
+}
+.savedAuthor {
+    font-size: 24px;
+    margin-top: 10px;
+    /* border-top: 2px solid #000000; */
+}
+/* *******RESPONSIVE DESIGN********** */
+
+@media screen and (min-width: 320px) {
+    h1 {
+        font-size: 40px;
+    }
+
+    h3 {
+        font-size: 35px;
+    }
+    .first-row {
+        max-width: 480px;
+    }
+    .third-row {
+        max-width: 480px;
+    } 
+
+    .book-history {
+        max-width: 480px;
+        margin: 5px;
+    }
+    .book-history p {
+        font-size: 20px;
+        margin-right: 10px;
+    }
+
+}
+  
+  @media screen and (min-width: 480px) {
+    h1 {
+        font-size: 70px;
+    }
+   
+    h3 {
+        font-size: 45px;
+    }
+
+    .first-row {
+        max-width: 600px;
+    }
+
+    .third-row {
+        max-width: 600px;
+        justify-content: space-around;
+    }
+
+    .hero {
+        max-width: 100%;
+    }
+    
+    .flex {
+        display: flex;
+        flex-direction: row;
+    }
+    .book-history {
+        max-width: 678px;
+        margin: 5px;
+    }
+    .book-history p {
+        font-size: 20px;
+        margin-right: 10px;
+    }
+}
+
+@media screen and (min-width: 613px) {
+    .mood-btn {
+        margin: 10px;
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        font-family: 'Sriracha', cursive;
+    }
+}
+
+@media screen and (min-width: 678px) {
+    h1 {
+        font-size: 70px;
+    }
+      
+    .flex {
+        display: flex;
+        flex-direction: row;
+    }
+    .book-history {
+        max-width: 800px;
+    }
+    .book-history p {
+        font-size: 28px;
+    }
+}

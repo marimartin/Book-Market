@@ -29,5 +29,8 @@ Book Market  is a quick and convenient platform to source a book or to learn mor
 5. Dayjs was utilized to log the date of the search
 6. Font awesome was utilized for styling all fonts
 
-#link to the functional url
+# link to the functional url
 https://marimartin.github.io/Book-Market/
+
+# Retrospective 
+We had an initial idea which was a little challenging to implement. We were quickly able to adapt our idea and develop different features for our app. Overall, our team communicated well and collaborated extensively on different phases of the project. Initially, Berhane, Prerona and Mari worked on all all the files -front-end and back-end. However, because we did work so collaboratively, each member was able to work on a bit of everything.Then Rafael was assigned working with the Ajax call to get data from the Google Books API Phase 1 focused on the front-end and Phase 2 focused on server-side requests Phase 3 involved displaying the data to the application. We had some communication issues but we reassigned tasks and were able to maintain the deadline for the project.
